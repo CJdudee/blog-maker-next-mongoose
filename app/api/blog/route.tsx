@@ -20,6 +20,38 @@ export async function GET(request: NextRequest, response: NextResponse) {
  
 }
 
+export async function PATCH(request: NextRequest, res: NextResponse) {
+
+    const client = await mongoRoute()
+
+    const data = await request.json()
+
+    const { title, content, id } = data
+
+    if (title === '' || content === '') {
+        return NextResponse.json('you cant have a blank title or content')
+
+
+    }
+
+    const post = Blogpost.findById(id)
+
+    post.title = title
+    post.content = content
+    post.updatedAt = new Date()
+
+    const savedPost = post.save()
+
+    if(savedPost) {
+        NextResponse.json('post was updated')
+    } else {
+        NextResponse.json('didnt save')
+    }
+    
+
+    
+}
+
 
 export async function POST(request: NextRequest, res: NextResponse) {
     

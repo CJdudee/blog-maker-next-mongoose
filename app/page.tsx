@@ -14,10 +14,10 @@ const blogs =  getBlogs()
 
 const blogsArray = await blogs
 
-console.log(blogsArray)
+//console.log(blogsArray)
 
   return (
-    <div className='p-10 text-2xl'>hey
+    <div className='p-10 '>
         {blogsArray.map((b): any => {
           return (
             <BlogObject key={b._id} {...b} />
