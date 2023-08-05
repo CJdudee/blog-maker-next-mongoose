@@ -48,6 +48,7 @@ export default function NewUser() {
             <label className='text-2xl ' htmlFor='title'>
                 title
             </label>
+            
             <div>
 
             <input 
