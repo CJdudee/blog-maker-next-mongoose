@@ -1,12 +1,17 @@
+import clientPromise from '@/app/context/mongodb'
+import { ObjectId } from 'bson'
 import React from 'react'
 
 export default async function getSingleBlog(blogId: string) {
   
-    const res = await fetch(`/api/blog/${blogId}`)
+    const client = clientPromise
+    const db = (await  client).db('test') 
 
-    if (!res.ok) throw new Error('id not found') 
-    console.log(res)
+    const blogs = await db.collection('blogposts').find( {_id: new ObjectId(blogId) } ).toArray()
 
-    return res.json()
+    return blogs
 
 }
+
+
+//64cca2cee60b78c0a1d5b5c5

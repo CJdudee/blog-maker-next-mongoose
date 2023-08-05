@@ -1,3 +1,8 @@
+
+
+import BlogObject from '@/app/components/BlogObject'
+import EditBlog from '@/app/components/EditBlog'
+
 import getSingleBlog from '@/lib/getSingleBlog'
 import React from 'react'
 
@@ -9,9 +14,23 @@ type Params = {
 
 export default  async function page( { params: { blogId } }: Params) {
 
-    const blog = await getSingleBlog(blogId)
+    const blog =  getSingleBlog(blogId)
+
+    const blogArray = await blog
+
+    //console.log(blogArray)
+
+    if (!blogArray) throw new Error('prolem')
 
   return (
-    <div>page</div>
+    <>
+    <div>
+   {blogArray.map((r: any) => {
+     return (
+       <EditBlog {...r} />
+       )
+      })}
+      </div>
+      </>
   )
 }

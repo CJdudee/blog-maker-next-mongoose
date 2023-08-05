@@ -5,20 +5,25 @@ import mongoRoute from './context/mongoroute'
 import getUsers from '@/lib/getUsers'
 import getBlogs from '@/lib/getBlogs'
 import BlogObject from './components/BlogObject'
+import getUsersFetch from '@/lib/getUsersFetch'
 
 //make sure to use await 
 
 export default async function Home() {
 
-const blogs =  getBlogs()
+const blogs = getBlogs()
 
 const blogsArray = await blogs
 
+// const blogsArray = await getUsersFetch()
+
+// console.log(blogsArray)
+// add props to get fresh data ????
 //console.log(blogsArray)
 
   return (
     <div className='p-10 '>
-        {blogsArray.map((b): any => {
+        {blogsArray.map((b: any): any => {
           return (
             <BlogObject key={b._id} {...b} />
           )

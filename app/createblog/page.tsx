@@ -41,32 +41,43 @@ export default function NewUser() {
     }
 
   return (
-    <form onSubmit={handleSubmit} className='bg-white p-10'>
-        <div className='mb-4'>
-            <label className='label-form' htmlFor='title'>
+    <div className='p-10'>
+
+    <form onSubmit={handleSubmit} className='bg-amber-500 text-center p-10 rounded-md outline'>
+        <div className='mb-4 text-start '>
+            <label className='text-2xl ' htmlFor='title'>
                 title
             </label>
+            <div>
+
             <input 
+            className=' rounded-md border w-1/2 lg:w-1/4 pl-2 '
             id='title'
             type='text'
             name='title'
             required
             minLength={3}
             />
+            </div>
+
         </div>
 
-        <div className='mb-4'>
-            <label className='' htmlFor='content'>
+        <div className='mb-4 text-start'>
+            <label className='text-2xl' htmlFor='content'>
                 content
             </label>
-            <input 
+            <div>
+
+            <textarea 
             id='content'
-            type='content'
             name='content'
-            className=''
+            className='w-full text-xl rounded-md p-2'
             />
+            </div>
+
         </div>
         <button type='submit'>send</button>
     </form>
+            </div>
   )
 }
