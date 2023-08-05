@@ -77,7 +77,7 @@ export default function NewUser() {
             </div>
 
         </div>
-        <button type='submit'>send</button>
+        <button className='outline p-2 mt-5 rounded-md'  type='submit'>send</button>
     </form>
             </div>
   )

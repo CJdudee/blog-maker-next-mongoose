@@ -10,20 +10,35 @@ export default function BlogObject({title, content, createdAt, updatedAt, _id }:
 
 
     const madeAt = new Date(createdAt).toLocaleDateString('en-us', {weekday: "long", year: 'numeric', month: 'short', day: 'numeric'} )
-    const editedAt = new Date(updatedAt).toLocaleDateString('en-us', {weekday: "long", year: 'numeric', month: 'short', day: '2-digit'} )
+    const editedAt = new Date(updatedAt).toLocaleDateString('en-us', {weekday: "long", year: 'numeric', month: 'short', day: 'numeric'} )
 
     const madeTime = new Date(createdAt).toLocaleTimeString('en-US')
     const editedTime = new Date(updatedAt).toLocaleTimeString('en-US')
     //console.log(madeAt)
   return (
     <div className='bg-amber-500 text-center p-10 rounded-md outline mb-4'>
-        <h2 className='text-2xl text-start mb-5 '>{title}</h2>
-        <div className='outline p-10 '>
+        <Link href={`/viewblog/${_id}`} className='text-2xl flex mb-5 hover:text-white  '>{title}</Link>
 
-        <p className='pb-10'>{content}</p>
-        <p className='text-start text-sm'>Created At: {madeAt} : {madeTime}</p>
+
+        <div className='outline p-10 rounded-md'>
+
+        {content.length < 50
+        ? (<p>{content}</p>)
+        : (<p>{content.substring(0,80)}...</p>)}
+        
+
+          <div className='grid grid-cols-2 mt-4'>
+
+
+        <p className=' text-start  text-sm font-light'>Created At: {madeAt} : {madeTime}</p>
+
+        {madeTime === editedTime ?
+        null :
+        (<p className='  text-end text-sm font-light '>Updated At: {editedAt} : {editedTime}</p>)}
+        
+          </div>
+
         </div>
-        <p>{editedAt} : {editedTime}</p>
         <div className='text-start mt-5'>
 
         <Link href={`/editblog/${_id}`} className='outline p-2 mt-5 rounded-md'>Edit</Link>

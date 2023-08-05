@@ -102,18 +102,25 @@ export default function EditBlog({title, content, _id}: any) {
             <div>
 
             <textarea 
-            id='content'
             
+            rows={8}
+            id='content'
             name='content'
             value={editContent}
             onChange={e => setEditContent(e.target.value)}
-            className='w-full text-xl rounded-md p-2'
+            className='w-full text-xl rounded-md p-2 min-h-1/2'
             />
             </div>
 
         </div>
-        <button type='submit'>Send</button>
-        <button onClick={handleDelete}>Delte post</button>
+        
+        <div className='flex justify-evenly'>
+
+        <button className='outline p-2 mt-5 rounded-md ' type='submit'>Send</button>
+        <button className='outline p-2 mt-5 rounded-md ' onClick={handleDelete}>Delte post</button>
+        
+        </div>
+
     </form>
 
     </div>

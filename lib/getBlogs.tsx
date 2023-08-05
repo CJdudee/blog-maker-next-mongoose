@@ -5,7 +5,7 @@ export default async function getBlogs() {
     const client = clientPromise
     const db = (await client).db('test') 
 
-    const blogs = await db.collection('blogposts').find().toArray()
+    const blogs = await db.collection('blogposts').find().sort({createdAt:-1}).toArray()
 
     return blogs
 }
