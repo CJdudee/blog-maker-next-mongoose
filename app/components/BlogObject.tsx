@@ -16,8 +16,8 @@ export default function BlogObject({title, content, createdAt, updatedAt, _id }:
     const editedTime = new Date(updatedAt).toLocaleTimeString('en-US')
     //console.log(madeAt)
   return (
-    <div className='bg-amber-500 text-center p-10 rounded-md outline mb-4'>
-        <Link href={`/viewblog/${_id}`} className='text-2xl flex mb-5 hover:text-white  '>{title}</Link>
+    <div className='bg-slate-200 text-center p-10 rounded-md outline mb-4'>
+        <Link href={`/viewblog/${_id}`} className='text-2xl flex mb-5  hover:text-gray-500  '>{title}</Link>
 
 
         <div className='outline p-10 rounded-md'>

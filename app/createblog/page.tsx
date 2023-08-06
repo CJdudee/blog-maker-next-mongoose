@@ -43,7 +43,7 @@ export default function NewUser() {
   return (
     <div className='p-10'>
 
-    <form onSubmit={handleSubmit} className='bg-amber-500 text-center p-10 rounded-md outline'>
+    <form onSubmit={handleSubmit} className='bg-slate-200 text-center p-10 rounded-md outline'>
         <div className='mb-4 text-start '>
             <label className='text-2xl ' htmlFor='title'>
                 title
@@ -52,7 +52,7 @@ export default function NewUser() {
             <div>
 
             <input 
-            className=' rounded-md border w-1/2 lg:w-1/4 pl-2 '
+            className=' rounded-md border w-1/2 lg:w-1/4 pl-2  '
             id='title'
             type='text'
             name='title'
@@ -70,6 +70,7 @@ export default function NewUser() {
             <div>
 
             <textarea 
+            rows={8}
             id='content'
             name='content'
             className='w-full text-xl rounded-md p-2'

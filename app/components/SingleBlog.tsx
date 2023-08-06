@@ -13,7 +13,7 @@ export default function SingleBlog({title, content, createdAt, updatedAt, _id }:
     const editedTime = new Date(updatedAt).toLocaleTimeString('en-US')
     //console.log(madeAt)
   return (
-    <div className='bg-amber-500 text-center p-10 rounded-md outline mb-4'>
+    <div className='bg-slate-200 text-center p-10 rounded-md outline mb-4'>
         <h2 className='text-2xl text-start mb-5 '>{title}</h2>
 
         <div className='outline p-10 rounded-md'>
@@ -25,7 +25,9 @@ export default function SingleBlog({title, content, createdAt, updatedAt, _id }:
 
         <p className='text-start  text-sm font-light'>Created At: {madeAt} : {madeTime}</p>
 
-        <p className='text-start  text-sm font-light'>Updated At: {editedAt} : {editedTime}</p>
+        {madeTime === editedTime ?
+        null :
+        (<p className='  text-end text-sm font-light '>Updated At: {editedAt} : {editedTime}</p>)}
         </div>
 
         </div>

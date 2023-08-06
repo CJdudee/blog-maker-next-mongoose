@@ -72,7 +72,7 @@ export default function EditBlog({title, content, _id}: any) {
     <div className='p-10'>
 
    
-    <form onSubmit={handleSubmit} className='bg-amber-500 text-center p-10 rounded-md outline'>
+    <form onSubmit={handleSubmit} className='bg-slate-200 text-center p-10 rounded-md outline'>
         <div className='mb-4 text-start'>
             <label className='text-2xl' htmlFor='title'>
                 title
@@ -116,8 +116,8 @@ export default function EditBlog({title, content, _id}: any) {
         
         <div className='flex justify-evenly'>
 
-        <button className='outline p-2 mt-5 rounded-md ' type='submit'>Send</button>
-        <button className='outline p-2 mt-5 rounded-md ' onClick={handleDelete}>Delte post</button>
+        <button className='outline p-2 mt-5 rounded-md ' type='submit'>Post</button>
+        <button className='outline p-2 mt-5 rounded-md ' onClick={handleDelete}>Delete post</button>
         
         </div>
 

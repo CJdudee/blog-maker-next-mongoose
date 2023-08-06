@@ -2,10 +2,10 @@ import User from '@/models/User'
 import Image from 'next/image'
 import React from 'react'
 import mongoRoute from './context/mongoroute'
-import getUsers from '@/lib/getUsers'
+
 import getBlogs from '@/lib/getBlogs'
 import BlogObject from './components/BlogObject'
-import getUsersFetch from '@/lib/getUsersFetch'
+import getUsersFetch from '@/lib/getBlogsFetch'
 
 //make sure to use await 
 
