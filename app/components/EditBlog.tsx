@@ -106,7 +106,6 @@ export default function EditBlog({title, content, _id}: {
             <div>
 
             <textarea 
-            
             rows={8}
             id='content'
             name='content'
