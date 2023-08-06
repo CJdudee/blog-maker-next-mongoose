@@ -5,7 +5,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
-export default function BlogObject({title, content, createdAt, updatedAt, _id }: any) {
+export default function BlogObject({title, content, createdAt, updatedAt, _id }: {
+  title: string,
+  content: string,
+  createdAt: string,
+  updatedAt: string, 
+  _id: string
+}) {
 
 
 
@@ -24,11 +30,12 @@ export default function BlogObject({title, content, createdAt, updatedAt, _id }:
 
         {content.length < 50
         ? (<p>{content}</p>)
-        : (<p>{content.substring(0,80)}...</p>)}
+        : (<p>{content.substring(0,200)}...</p>)}
         
 
           <div className='grid grid-cols-2 mt-4'>
 
+        
 
         <p className=' text-start  text-sm font-light'>Created At: {madeAt} : {madeTime}</p>
 

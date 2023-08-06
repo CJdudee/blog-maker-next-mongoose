@@ -22,7 +22,7 @@ const blogsArray = await blogs
 //console.log(blogsArray)
 
   return (
-    <div className='p-10 '>
+    <div className='p-10 2xl:grid grid-cols-2 gap-5 '>
         {blogsArray.map((b: any): any => {
           return (
             <BlogObject key={b._id} {...b} />

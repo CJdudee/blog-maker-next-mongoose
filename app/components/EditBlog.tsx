@@ -3,7 +3,11 @@
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
-export default function EditBlog({title, content, _id}: any) {
+export default function EditBlog({title, content, _id}: {
+    title: string,
+    content: string, 
+    _id: string
+}) {
     const router = useRouter()
 
     const [editTitle, setEditTitle ] = useState(title)

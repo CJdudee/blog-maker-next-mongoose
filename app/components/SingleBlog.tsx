@@ -2,7 +2,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
-export default function SingleBlog({title, content, createdAt, updatedAt, _id }: any) {
+export default function SingleBlog({title, content, createdAt, updatedAt, _id }: {
+  title: string, 
+  content: string, 
+  createdAt: string,
+  updatedAt: string,
+  _id: string
+}) {
 
 
 
