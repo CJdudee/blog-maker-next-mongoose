@@ -19,9 +19,17 @@ export default function SingleBlog({title, content, createdAt, updatedAt, _id }:
         <div className='outline p-10 rounded-md'>
 
         <p className='pb-10'>{content}</p>
-        <p className='text-start text-sm'>Created At: {madeAt} : {madeTime}</p>
+
+
+        <div className='grid grid-cols-2 mt-4'>
+
+        <p className='text-start  text-sm font-light'>Created At: {madeAt} : {madeTime}</p>
+
+        <p className='text-start  text-sm font-light'>Updated At: {editedAt} : {editedTime}</p>
         </div>
-        <p className='text-end mt-4'>Updated At: {editedAt} : {editedTime}</p>
+
+        </div>
+        
         <div className='text-start mt-5'>
 
         <Link href={`/editblog/${_id}`} className='outline p-2 mt-5 rounded-md'>Edit</Link>
